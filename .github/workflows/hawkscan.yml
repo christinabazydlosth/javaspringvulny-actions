@@ -1,7 +1,5 @@
 name: HawkScan
 on:
-  push:
-  pull_request:
   repository_dispatch:
     types: [integration-initial-test]
 jobs:
@@ -9,7 +7,7 @@ jobs:
     name: HawkScan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Create ${{ github.event.client_payload.repoName }} app directory
         run: mkdir -p common/build/integrationTests/hawkscan-action/apps/${{ github.event.client_payload.repoName }}
       - name: Navigate to ${{ github.event.client_payload.repoName }} app directory

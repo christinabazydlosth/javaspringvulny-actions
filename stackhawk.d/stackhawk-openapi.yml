@@ -2,12 +2,6 @@ app:
   applicationId: ${APP_ID:718938fc-0044-476c-b10a-72e180c9c998}
   env: ${APP_ENV:dev-api}
   host: ${APP_HOST:https://localhost:9000}
-  #Github PR Comments and UI
-  tags:
-  - name: _STACKHAWK_GIT_COMMIT_SHA
-    value: ${COMMIT_SHA:}
-  - name: _STACKHAWK_GIT_BRANCH
-    value: ${BRANCH_NAME:}
   excludePaths:
     - "/logout"
   antiCsrfParam: "_csrf"
@@ -54,3 +48,10 @@ app:
           - "username1"
           - "username2"
           - "username3"
+
+#Github PR Comments and UI
+tags:
+  - name: _STACKHAWK_GIT_COMMIT_SHA
+    value: ${COMMIT_SHA:}
+  - name: _STACKHAWK_GIT_BRANCH
+    value: ${BRANCH_NAME:}

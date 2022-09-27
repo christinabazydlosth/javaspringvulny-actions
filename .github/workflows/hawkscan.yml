@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
   repository_dispatch:
-    types: [main]
+    types: [integration-initial-test]
 jobs:
   hawkscan:
     name: HawkScan

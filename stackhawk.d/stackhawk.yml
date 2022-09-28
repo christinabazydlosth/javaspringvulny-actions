@@ -1,4 +1,34 @@
 app:
-  applicationId: ${APP_ID:718938fc-0044-476c-b10a-72e180c9c998}
-  env: ${APP_ENV:dev}
+  applicationId: ${APP_ID:8454c127-64aa-490e-a151-54ae287ee8f1}
+  env: ${APP_ENV:development}
   host: ${APP_HOST:https://localhost:9000}
+  excludePaths:
+    - "/logout"
+#    - "/login-form-multi"
+#    - "/login-code"
+  antiCsrfParam: "_csrf"
+  authentication:
+    loggedInIndicator: "\\QSign Out\\E"
+    loggedOutIndicator: ".*Location:.*/login.*"
+    usernamePassword:
+      type: FORM
+      loginPath: /login
+      loginPagePath: /login
+      usernameField: username
+      passwordField: password
+      scanUsername: "user"
+      scanPassword: "password"
+    cookieAuthorization:
+      cookieNames:
+        - "JSESSIONID"
+    testPath:
+      path: /search
+      success: "HTTP.*200.*"
+hawk:
+  spider:
+    maxDurationMinutes: 5
+#  config:
+#    - "scanner.analyser.redirectEqualsNotFound=false"
+#    - "scanner.analyser.followRedirect=true"
+
+

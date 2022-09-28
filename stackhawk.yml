@@ -1,5 +1,5 @@
 app:
-  applicationId: ${APP_ID:718938fc-0044-476c-b10a-72e180c9c998}
+  applicationId: ${APP_ID:8454c127-64aa-490e-a151-54ae287ee8f1}
   env: ${APP_ENV:dev}
   host: ${APP_HOST:https://localhost:9000}
   excludePaths:
@@ -24,6 +24,29 @@ app:
     testPath:
       path: /search
       success: "HTTP.*200.*"
+    
+    # Run OpenAPI & Faker
+    openApiConf:
+    # path: /openapi
+    filePath: openapi.yaml
+    fakerEnabled: true #default false
+    # includeAllMethods: true
+    includedMethods:
+      - POST
+      - PUT
+    customVariables:
+      - field: text
+        values:
+          - "$faker:Yoda.quote"
+      - field: searchText
+        values:
+          - "$faker:Crypto.sha512"
+      - field: username
+        values:
+          - "$faker:fullName"
+      - field: password
+        values:
+          - "$faker:password"
 hawk:
   spider:
     maxDurationMinutes: 5
@@ -31,4 +54,9 @@ hawk:
 #    - "scanner.analyser.redirectEqualsNotFound=false"
 #    - "scanner.analyser.followRedirect=true"
 
-
+#Github PR Comments and UI
+tags:
+  - name: _STACKHAWK_GIT_COMMIT_SHA
+    value: ${COMMIT_SHA:}
+  - name: _STACKHAWK_GIT_BRANCH
+    value: ${BRANCH_NAME:}

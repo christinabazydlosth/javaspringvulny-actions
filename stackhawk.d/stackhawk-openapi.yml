@@ -1,6 +1,6 @@
 app:
-  applicationId: ${APP_ID:718938fc-0044-476c-b10a-72e180c9c998}
-  env: ${APP_ENV:dev-api}
+  applicationId: ${APP_ID:8454c127-64aa-490e-a151-54ae287ee8f1}
+  env: ${APP_ENV:build-action}
   host: ${APP_HOST:https://localhost:9000}
   excludePaths:
     - "/logout"
@@ -29,7 +29,7 @@ app:
     # path: /openapi
     filePath: openapi.yaml
     fakerEnabled: true #default false
-    includeAllMethods: true
+    # includeAllMethods: true
     includedMethods:
       - POST
       - PUT

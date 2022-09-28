@@ -36,23 +36,16 @@ app:
     customVariables:
       - field: text
         values:
-          - "customTextValue1"
-          - "customTextValue2"
-          - "customTextValue3"
+          - "$faker:Yoda.quote"
       - field: searchText
         values:
           - "$faker:Crypto.sha512"
-          - "customSearchText2"
-          - "customSearchText3"
       - field: username
         values:
           - "$faker:fullName"
-          - "username2"
-          - "username3"
       - field: password
         values:
           - "$faker:password"
-          - "testLab1234"
 
 #Github PR Comments and UI
 tags:

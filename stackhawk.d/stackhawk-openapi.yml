@@ -41,7 +41,7 @@ app:
           - "customTextValue3"
       - field: searchText
         values:
-          - "customSearchText1"
+          - "$faker:Crypto.sha512"
           - "customSearchText2"
           - "customSearchText3"
       - field: username

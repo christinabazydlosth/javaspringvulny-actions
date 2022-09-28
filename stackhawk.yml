@@ -1,6 +1,6 @@
 app:
   applicationId: ${APP_ID:8454c127-64aa-490e-a151-54ae287ee8f1}
-  env: ${APP_ENV:dev}
+  env: ${APP_ENV:Development}
   host: ${APP_HOST:https://localhost:9000}
   excludePaths:
     - "/logout"
@@ -59,4 +59,5 @@ tags:
   - name: _STACKHAWK_GIT_COMMIT_SHA
     value: ${COMMIT_SHA:}
   - name: _STACKHAWK_GIT_BRANCH
-    value: ${BRANCH_NAME:}
+    #value: ${BRANCH_NAME:}
+    value: ${MY_ENV_VAR:}

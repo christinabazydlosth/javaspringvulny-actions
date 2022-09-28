@@ -28,6 +28,7 @@ app:
   openApiConf:
     # path: /openapi
     filePath: openapi.yaml
+    fakerEnabled: true #default false
     includeAllMethods: true
     includedMethods:
       - POST
@@ -45,9 +46,13 @@ app:
           - "customSearchText3"
       - field: username
         values:
-          - "username1"
+          - "$faker:fullName"
           - "username2"
           - "username3"
+      - field: password
+        values:
+          - "$faker:password"
+          - "testLab1234"
 
 #Github PR Comments and UI
 tags:

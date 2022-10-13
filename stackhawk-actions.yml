@@ -1,6 +1,5 @@
 app:
   # Update your applicationId
-  # run fancy stuff on PRs
   applicationId: ${APP_ID:8454c127-64aa-490e-a151-54ae287ee8f1}
   env: ${APP_ENV:GitHub Actions}
   host: ${APP_HOST:https://localhost:9000}
@@ -9,6 +8,7 @@ app:
 #    - "/login-form-multi"
 #    - "/login-code"
   antiCsrfParam: "_csrf"
+  # Configure Basic Authentication
   authentication:
     loggedInIndicator: "\\QSign Out\\E"
     loggedOutIndicator: ".*Location:.*/login.*"
@@ -26,8 +26,7 @@ app:
     testPath:
       path: /search
       success: "HTTP.*200.*"
-    
-    # Run OpenAPI & Faker
+    # Utilize OpenAPI Spec, Custom data & Faker
     openApiConf:
     # path: /openapi
     filePath: openapi.yaml
@@ -56,8 +55,7 @@ hawk:
 #  config:
 #    - "scanner.analyser.redirectEqualsNotFound=false"
 #    - "scanner.analyser.followRedirect=true"
-
-#Github PR Comments and UI
+# Grab Commit SHA and Branch name
 tags:
   - name: _STACKHAWK_GIT_COMMIT_SHA
     value: ${COMMIT_SHA:}
